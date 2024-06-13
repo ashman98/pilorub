@@ -26,6 +26,7 @@ return new class extends Migration
             $table->integer('thickness');
             $table->string('moisture');
             $table->tinyInteger('sort');
+
             $table->tinyInteger('del_status')->default('0');
             $table->timestamps();
 

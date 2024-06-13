@@ -4,15 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class Product extends Model
+class Basket extends Model
 {
     use HasFactory;
 
-    public function baskets(): BelongsToMany
+    public function products(): BelongsToMany
     {
-        return $this->belongsToMany(Basket::class)
+        return $this->belongsToMany(Product::class)
             ->withPivot('quantity')
             ->withTimestamps();
     }
