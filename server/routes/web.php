@@ -18,3 +18,6 @@ Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']);
 Route::get('/about',[\App\Http\Controllers\AboutController::class, 'index']);
 
 Route::get('/about/{id}',[\App\Http\Controllers\AboutController::class, 'user']);
+
+//Route::post('graphql', [GraphQLController::class, 'query']);
+

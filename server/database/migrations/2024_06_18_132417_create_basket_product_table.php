@@ -12,19 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('basket_product', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('basket_id');
-            $table->unsignedBigInteger('product_id');
-            $table->unsignedTinyInteger('quantity');
+            $table->unsignedBigInteger('user_id');
 
-            $table->foreign('basket_id')
-                ->references('id')
-                ->on('baskets')
-                ->cascadeOnDelete();
-            $table->foreign('product_id')
-                ->references('id')
-                ->on('products')
-                ->cascadeOnDelete();
+            $table->unsignedTinyInteger('quantity');
+            $table->tinyInteger('with_cubic_meters')->default(0);
+
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 

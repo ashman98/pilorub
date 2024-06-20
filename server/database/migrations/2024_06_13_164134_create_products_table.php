@@ -18,6 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('wood_type_id');
             $table->unsignedBigInteger('product_standard_id');
 
+            $table->string('name');
             $table->decimal('pieces_price');
             $table->decimal('cubic_meters_price');
             $table->integer('count_in_cubic');

@@ -6,14 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Basket extends Model
+class Order extends Model
 {
     use HasFactory;
-
-    protected $fillable = [
-        'user_id', 'item', 'quantity',
-    ];
 
     public function user(): BelongsTo
     {
@@ -23,8 +20,10 @@ class Basket extends Model
     public function products(): BelongsToMany
     {
         return $this->belongsToMany(
-            Product::class ,
-            'basket_product'
-        )->withPivot('quantity')->withPivot('with_cubic_meters')->withTimestamps();
+            Product::class,
+            'order_product',
+            'order_id',
+            'product_id'
+        )->withPivot('quantity')->withTimestamps();
     }
 }
