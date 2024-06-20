@@ -1,0 +1,22 @@
+.feedback_box {
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: white;
+    margin: 20px 0;
+}
+
+.feedback_box_title {
+    font-size: 24px;
+}
+
+.feedback_content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.user_info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}

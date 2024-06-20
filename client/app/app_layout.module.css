@@ -1,0 +1,31 @@
+
+
+.app_body {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #1e130c, #9a8478);
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+
+@media(max-width: 1200px) {
+    .container {
+        max-width: 1150px;
+    }
+}
+
+@media (max-width: 786px) {
+    .container {
+        max-width: 720px;
+    }
+}
+@media(max-width: 375px) {
+    .container {
+        min-width: 100%;
+        margin: 0 auto;
+    }
+}
