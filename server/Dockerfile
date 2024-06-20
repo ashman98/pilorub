@@ -33,6 +33,9 @@ COPY . /var/www/html
 # Copy existing application directory permissions
 COPY --chown=www-data:www-data . /var/www/html
 
+# Install Composer dependencies
+RUN composer install --no-dev --optimize-autoloader
+
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
 CMD ["php-fpm"]
